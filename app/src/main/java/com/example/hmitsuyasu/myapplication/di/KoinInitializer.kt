@@ -12,9 +12,9 @@ class KoinInitializer(private val application: Application) {
             androidLogger()
             androidContext(application)
             modules(
-                    listOf(
-                            preferencesModules
-                    )
+                listOf(
+                    preferencesModules
+                )
             )
         }
     }

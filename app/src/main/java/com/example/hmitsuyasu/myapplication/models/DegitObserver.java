@@ -3,6 +3,7 @@ package com.example.hmitsuyasu.myapplication.models;
 import android.util.Log;
 
 public class DegitObserver implements Observer {
+
     private String TAG = getClass().getSimpleName();
 
     public void update(NumberGenerator generator) {

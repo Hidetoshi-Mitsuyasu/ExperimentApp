@@ -3,7 +3,7 @@ package com.example.hmitsuyasu.myapplication.update.usecase
 import com.example.hmitsuyasu.myapplication.update.repositories.ISettingRepository
 
 class UseCaseUpdate(
-        private val setteig: ISettingRepository
+    private val setteig: ISettingRepository
 //        private val remoteConfig: IOnTheAirSettingRepository
 ) {
 

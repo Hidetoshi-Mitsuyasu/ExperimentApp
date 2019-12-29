@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 public class Log {
+
     private static DateFormat dateTimeFormat = new SimpleDateFormat("MM-dd HH:mm:ss.SS");
 
     public static void d(String tag, String msg) {

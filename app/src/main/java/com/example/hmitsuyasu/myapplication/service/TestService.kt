@@ -43,8 +43,12 @@ class TestService : Service() {
         isRunning = true
         scope.launch {
             for (i in 1..5000) {
-                Log.d(TAG, String.format("id:%s,name:%s,%s回目", model?.id ?: "", model?.name
-                        ?: "", i))
+                Log.d(
+                    TAG, String.format(
+                        "id:%s,name:%s,%s回目", model?.id ?: "", model?.name
+                            ?: "", i
+                    )
+                )
                 generator?.execute()
                 delay(3000L)
             }

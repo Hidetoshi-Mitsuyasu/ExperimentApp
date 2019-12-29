@@ -1,16 +1,19 @@
 package com.example.hmitsuyasu.myapplication.utils;
 
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertThat;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.*;
 
 /**
  * Created by hmitsuyasu on 2019/03/26.
  */
 public class JsonUtilsTest {
+
     @Before
     public void setUp() throws Exception {
 

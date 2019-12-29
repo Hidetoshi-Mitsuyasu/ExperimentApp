@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public abstract class NumberGenerator implements Serializable {
+
     private ArrayList observers = new ArrayList();
 
     public void addObserver(Observer observer) {

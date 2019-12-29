@@ -9,9 +9,9 @@ import java.io.InputStreamReader;
  * Created by hmitsuyasu on 2019/03/20.
  */
 public class FileUtils {
+
     /**
-     * Read file string.
-     * Assetの代わりにresources/のファイルを読み込む。
+     * Read file string. Assetの代わりにresources/のファイルを読み込む。
      *
      * @param path the path
      * @return the string

@@ -4,6 +4,7 @@ import android.util.Log;
 import org.jetbrains.annotations.NotNull;
 
 public class GraphObserver implements Observer {
+
     private String TAG = getClass().getSimpleName();
 
     @Override
