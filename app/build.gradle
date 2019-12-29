@@ -21,7 +21,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    packagingOptions{
+
+    dataBinding {
+        enabled = true
+    }
+
+    packagingOptions {
         exclude 'META-INF/proguard/coroutines.pro'
     }
 
@@ -66,7 +71,6 @@ dependencies {
     implementation "org.koin:koin-android-viewmodel:$rootProject.koinVersion"
     implementation "org.koin:koin-android-ext:$rootProject.koinVersion"
     testImplementation "org.koin:koin-test:$rootProject.koinVersion"
-
 
 
     debugImplementation("androidx.fragment:fragment-testing:$fragmentVersion") {
