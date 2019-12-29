@@ -2,28 +2,27 @@ package com.example.hmitsuyasu.myapplication
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.example.hmitsuyasu.myapplication.models.DegitObserver
 import com.example.hmitsuyasu.myapplication.models.GraphObserver
 import com.example.hmitsuyasu.myapplication.models.RandomNumberGenerator
 import com.example.hmitsuyasu.myapplication.models.TestModel
 import com.example.hmitsuyasu.myapplication.service.TestService
 import com.example.hmitsuyasu.myapplication.service.TestService.Companion.INTENT_EXTRA_GENERATOR
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
-
 
 class MainActivity : AppCompatActivity() {
     val TAG: String = javaClass.simpleName
     val generator = RandomNumberGenerator()
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
-            R.id.navigation_home          -> {
+            R.id.navigation_home -> {
                 message.setText(R.string.title_home)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_dashboard     -> {
+            R.id.navigation_dashboard -> {
                 message.setText(R.string.title_dashboard)
                 return@OnNavigationItemSelectedListener true
             }
