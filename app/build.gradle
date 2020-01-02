@@ -15,6 +15,21 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+    // デバッグ用 apk とリリース用 apk の署名の設定
+    signingConfigs {
+        apply from: '../signingConfigDebug.gradle', to: android
+        def releaseSettingGradleFile = file('../signingConfigRelease.gradle')
+        if (releaseSettingGradleFile.exists()) {
+            apply from: releaseSettingGradleFile, to: android
+        } else {
+            release {}
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
