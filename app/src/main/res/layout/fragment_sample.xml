@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+  <data>
+    <import type="android.view.View" />
+    <variable
+      name="viewModel"
+      type="com.example.hmitsuyasu.myapplication.models.LoginViewModel"
+      />
+    <variable
+      name="owner"
+      type="com.example.hmitsuyasu.myapplication.fragments.SampleFragment"
+      />
+  </data>
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <Switch
+      android:id="@+id/switch1"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Switch"
+      />
+    <TextView
+      android:id="@+id/textView"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="TextView"
+      />
+    <ToggleButton
+      android:id="@+id/toggleButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="ToggleButton"
+      />
+  </LinearLayout>
+</layout>

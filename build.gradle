@@ -38,6 +38,7 @@ ext {
     appCompatVersion = '1.1.0'
     espressoVersion = '3.2.0'
     fragmentVersion = '1.1.0'
+    lifecycle_version = '2.1.0'
     minSdkVersion = 24
     targetSdkVersion = 28
     compileSdkVersion = 28

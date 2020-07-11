@@ -5,7 +5,7 @@ import com.example.hmitsuyasu.myapplication.update.repositories.ISettingReposito
 
 open class SettingsPref(mContext: Context) : ISettingRepository {
     override fun getPh2OtaAvailableOn(): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         return true
     }
 }

@@ -1,9 +1,12 @@
 package com.example.hmitsuyasu.myapplication
 
+
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.example.hmitsuyasu.myapplication.fragments.SampleDialog
+import com.example.hmitsuyasu.myapplication.fragments.SampleFragment
 import com.example.hmitsuyasu.myapplication.models.DegitObserver
 import com.example.hmitsuyasu.myapplication.models.GraphObserver
 import com.example.hmitsuyasu.myapplication.models.RandomNumberGenerator
@@ -12,6 +15,7 @@ import com.example.hmitsuyasu.myapplication.service.TestService
 import com.example.hmitsuyasu.myapplication.service.TestService.Companion.INTENT_EXTRA_GENERATOR
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
     val TAG: String = javaClass.simpleName
@@ -55,7 +59,20 @@ class MainActivity : AppCompatActivity() {
             //            startNewService(TestModel("002","Change"))
             val graphObserver = GraphObserver()
             generator.addObserver(graphObserver)
+            val dialog = SampleDialog().also {
+            }
+            dialog.show(supportFragmentManager, "SampleDialog")
         }
+        // Fragmentを作成します
+        val fragment = SampleFragment()
+        // Fragmentの追加や削除といった変更を行う際は、Transactionを利用します
+        val transaction = supportFragmentManager.beginTransaction()
+        // 新しく追加を行うのでaddを使用します
+        // 他にも、よく使う操作で、replace removeといったメソッドがあります
+        // メソッドの1つ目の引数は対象のViewGroupのID、2つ目の引数は追加するfragment
+        transaction.add(R.id.fragment_area, fragment)
+        // 最後にcommitを使用することで変更を反映します
+        transaction.commit()
     }
 
     private fun startNewService(model: TestModel) {
