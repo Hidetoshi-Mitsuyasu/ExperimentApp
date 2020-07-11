@@ -26,6 +26,10 @@ class TestModel : Serializable {
     fun method001() {
         //コンフリクトする
     }
+    
+    fun method002() {
+        //コンフリクトしないでリベース
+    }
 
     class Route(links: Links, ordinary: Ordinary) {
 
