@@ -23,6 +23,10 @@ class TestModel : Serializable {
         return list
     }
 
+    fun method001() {
+
+    }
+
     class Route(links: Links, ordinary: Ordinary) {
 
     }
