@@ -17,9 +17,7 @@ jobs:
     steps:
     - name: install jq
       run: sudo apt-get install jq
+    - uses: actions/checkout@v2 
     - run: ls -l
     - run: pwd
-
-
-    
-      
+    - run: find . -name "*.json"
