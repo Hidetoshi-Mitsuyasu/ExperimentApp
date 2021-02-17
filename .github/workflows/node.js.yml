@@ -17,8 +17,7 @@ jobs:
     steps:
     - name: install jq
       run: sudo apt-get install jq
-    - run: ls -l
-    - run: find . -name "*.json"| xargs sh jsoncheck.sh
+    - run: find . -name "*.json"| xargs sh ./jsoncheck.sh
 
     
       
