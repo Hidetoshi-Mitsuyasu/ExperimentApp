@@ -17,7 +17,9 @@ jobs:
     steps:
     - name: install jq
       run: sudo apt-get install jq
-    - run: cat ./scratch.json | jq
+    - run: ls -l
+    - run: pwd
+
 
     
       
