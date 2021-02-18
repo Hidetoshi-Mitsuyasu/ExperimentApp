@@ -19,5 +19,7 @@ jobs:
       - name: checkJsonFile
         run: |
           find . -name "*.json" | xargs -n1 cat | jq '.'
-          find . -name "*.json"| xargs -n1 sh checkjson.sh
-        
+
+      - name: check JsonFile by Shell
+        run: |
+          find . -name "*.json"| xargs -n1 sh checkjson.sh        
