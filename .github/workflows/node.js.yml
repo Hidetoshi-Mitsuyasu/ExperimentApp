@@ -21,5 +21,6 @@ jobs:
           find . -name "*.json" | xargs -n1 cat | jq '.'
 
       - name: check JsonFile by Shell
+        if: always()
         run: |
           find . -name "*.json"| xargs -n1 sh checkjson.sh        
