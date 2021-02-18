@@ -19,8 +19,6 @@ jobs:
       - name: checkJsonFile
         run: |
           find . -name "*.json" | xargs -n1 cat | jq '.' 2>&1 > comments
-          echo $comments
-          echo $comments 
 
       - name: check JsonFile by Shell
         if: always()
