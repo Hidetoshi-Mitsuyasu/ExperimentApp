@@ -15,8 +15,8 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
-    - name: checkJsonFile
     - uses: actions/checkout@v2 
-    - run: | 
+    - name: checkJsonFile
+      run: | 
           find . -name "*.json" | xargs -n1 cat | jq '.' 
         
