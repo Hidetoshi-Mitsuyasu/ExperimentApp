@@ -18,8 +18,18 @@ jobs:
       - uses: actions/checkout@v2
       - name: checkJsonFile
         run: |
-          find . -name "*.json" | xargs -n1 cat | jq '.' 2>&1 > result
-          echo $result
+          find . -name "*.json" | xargs -n1 cat | jq '.' 2>&1 > comments
+          echo $comments
+
+      - name: Post multi-line comments
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          URL: ${{ github.event.pull_request.comments_url }}
+        run: |
+          curl -X POST \
+             -H "Authorization: token ${GITHUB_TOKEN}" \
+             -d "{\"body\": \"$(cat comments)\"}" \
+             ${URL}
 
       - name: check JsonFile by Shell
         if: always()
