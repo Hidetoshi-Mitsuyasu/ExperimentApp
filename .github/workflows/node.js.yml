@@ -30,7 +30,7 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: $(cat comments)
+              body:  '👋 Thanks for reporting!'
             })
 
       - name: check JsonFile by Shell
