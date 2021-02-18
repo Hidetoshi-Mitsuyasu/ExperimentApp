@@ -20,18 +20,7 @@ jobs:
         run: |
           find . -name "*.json" | xargs -n1 cat | jq '.' 2>&1 > comments
           echo $comments
-
-      - name: Post multi-line comments
-        uses: actions/github-script@0.8.0
-        if: always()
-        with:
-          script: |
-            github.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body:  '👋 Thanks for reporting!'
-            })
+          echo $comments 
 
       - name: check JsonFile by Shell
         if: always()
