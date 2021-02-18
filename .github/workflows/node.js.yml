@@ -15,11 +15,5 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
-    - name: install jq
-      run: sudo apt-get install jq
     - uses: actions/checkout@v2 
-    - run: ls -l
-    - run: pwd
-    - run: find . -name "*.json"| xargs -n1 echo
-    - run: find . -name "*.json"| xargs -n1 cat
-    - run: find . -name "*.json"| xargs -n1 cat | jq '.'
+    - run: find . -name "*.json"| xargs -n1 cat | jq '.'　 >> comments
