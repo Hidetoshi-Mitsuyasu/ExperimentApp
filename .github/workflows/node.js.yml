@@ -22,15 +22,16 @@ jobs:
           echo $comments
 
       - name: Post multi-line comments
+        uses: actions/github-script@0.8.0
         if: always()
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          URL: ${{ github.event.pull_request.comments_url }}
-        run: |
-          curl -X POST \
-             -H "Authorization: token ${GITHUB_TOKEN}" \
-             -d "{\"body\": \"$(cat comments)\"}" \
-             ${URL}
+        with:
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: $(cat comments)
+            })
 
       - name: check JsonFile by Shell
         if: always()
