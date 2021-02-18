@@ -16,4 +16,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2 
-    - run: find . -name "*.json"| xargs -n1 cat | jq '.'　 >> comments
+    - run: | 
+          find . -name "*.json"| xargs -n1 cat | jq '.' | >> comments
+          echo comments
